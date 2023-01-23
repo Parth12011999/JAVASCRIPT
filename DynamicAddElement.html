@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1
+        {
+            text-align: center;
+            color: green;
+        }
+        div
+        {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+        button
+        {
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Element adding</h1>
+        <div>
+            <label for="">Type</label>
+            <input type="text" placeholder="any type" id="type">
+            <label for="">value</label>
+            <input type="text" placeholder="any type" id="Value">
+            <button type="button" onclick="addItem()">Add</button>
+        </div>
+    <ul id="parent">
+        
+    </ul>
+    <script>
+        function addItem() {
+        let type = document.getElementById("type").value;
+        let value = document.getElementById("Value").value;
+        type = document.createElement(type);
+        type.appendChild(document.createTextNode(value));
+        document.getElementById("parent").appendChild(type);
+    }
+    </script>
+</body>
+</html>
