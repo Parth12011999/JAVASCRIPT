@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // document.write(alert("hello Parth"));
+
+        // alert(null === +"\n0\n");
+
+        // if(0){alert('Hello');}
+
+        // alert(null || 2 || undefined);
+
+        // let fruits = ["apple", "mango", "orange"];
+
+        // let shoppingCart = fruits;
+
+        // shoppingCart.push ("banana");
+
+        // document.write(fruits + "<br>");
+        // document.write(shoppingCart + "<br>");
+        // alert(fruits.length);
+
+
+        // let emp = {};
+        // emp.name = "John";
+        // emp.surname = "smith";
+        // emp.name = "pete";
+        // delete user.name;
+        // document.write(emp.name + " " + emp.surname);
+
+        // let john = {name:"John", surname:"hill", age:25};
+        // let pete = {name:"Pete", surname:"top", age:30};
+        // let mary = {name:"Mary", surname:"ress", age:28};
+        // let users = [john,pete,mary];
+        // let names = users.map((item) => item.name);
+        // let usermapped = users.map((user) => ({
+        //     fullname: `${user.name} ${user.surname}`,
+        //     age: user.age
+        // }))
+
+        // alert( usermapped[0].age ); // 1
+        // alert( usermapped[0].fullname );   
+        // console.log(names);
+        // document.write(names);
+        // alert(names);
+        // let salaries = { "John": 100, "Pete": 300, "Mary": 250 };
+        // function sumSalaries(salaries) {
+        // let sum = 0;
+        // for (let salary of Object.values(salaries)) {
+        //     sum += salary;
+        // }
+        // return sum;
+        // }
+        // alert( sumSalaries(salaries) );
+        // let json = JSON.stringify(john);
+        // console.log(json);
+        
+
+        // let obj = JSON.parse(json);
+        // console.log(obj);
+
+        // for(let i = 0; i < john.length; i++){
+        //     document.write(john[i].name +" is "+ john[i].age + " year old. <br>");
+        // }
+
+        // let user = { name: "John", years: 30 };
+
+        // // a) Extracting the 'name' property
+        // let { name } = user;
+
+        // // b) Extracting the 'years' property and renaming it to 'age'
+        // let { years: age } = user;
+
+        // // c) Extracting the 'isAdmin' property with a default value of 'false'
+        // let { isAdmin = false } = user;
+
+        // console.log(name);
+
+        let salaries = {
+            "John": 100,
+            "Pete": 300,
+            "Mary": 250,
+        };
+
+        function sumSalaries(salaries) {
+            var sum = 0;
+            for (const salary of Object.values(salaries)) {
+                sum += salary;
+            }
+            return sum;
+        }
+
+        alert( sumSalaries(salaries) );
+    </script>
+</body>
+</html>

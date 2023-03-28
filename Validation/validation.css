@@ -1,0 +1,76 @@
+*
+{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+body
+{
+    padding: 20px;
+}
+.form-grp
+{
+    display: block;
+    padding: 15px 10px;
+    text-align: justify;
+}
+.form-grp label
+{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 0;
+}
+.form-grp input
+{
+    border-radius: 5px;
+    padding: 3px 20px;
+    width: 500px;
+}
+.form-grp select
+{
+    width: 500px;
+    padding: 3px 20px;
+}
+#Gender1,#Gender2
+{
+    width: auto
+}
+#DOB
+{
+    width: auto;
+}
+#submit
+{
+    width: auto;
+}
+
+.form-grp input:focus
+{
+    outline: 0;
+}
+.form-grp select:focus
+{
+    outline: 0;
+}
+.form-grp.success input
+{
+    border: 3px solid green;
+}
+.form-grp.error input
+{
+    border:3px solid red;
+}
+.form-grp .error
+{
+    font-size: 12px;
+    color: red;
+}
+
+
+h3
+{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}

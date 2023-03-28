@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Javascript</title>
+   <link rel="stylesheet" href="slider.css">
+</head>
+<body>
+    <div class="slider-container">
+
+        <!-- slides -->
+        <div class="slide">
+            <img src="https://picsum.photos/id/238/200/300" alt="">
+            <div class="caption">Slide 1</div>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/id/239/200/300" alt="">
+            <div class="caption">Slide 2</div>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/id/240/200/300" alt="">
+            <div class="caption">Slide 3</div>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/id/241/200/300" alt="">
+            <div class="caption">Slide 4</div>
+        </div>
+        <div class="slide">
+            <img src="https://picsum.photos/id/242/200/300" alt="">
+            <div class="caption">Slide 5</div>
+        </div>
+
+        <!-- numbers -->
+        <div id="number"></div>
+
+        <!-- indicators -->
+        <div class="slide-indicator">
+            <div class="indicator">
+
+            </div>
+            <div class="indicator">
+
+            </div>
+            <div class="indicator">
+
+            </div>
+            <div class="indicator">
+
+            </div>
+            <div class="indicator">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- buttons -->
+    <button class="arrow prev" onclick="Controller(-1)">&#10094;</button>
+    <button class="arrow next" onclick="Controller(1)">&#10095;</button>
+
+    <script src="slider.js"></script>
+</body>
+</html>

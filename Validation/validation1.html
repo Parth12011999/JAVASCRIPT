@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel="stylesheet" href="validation1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+   <div class="container">
+        <form action="">
+            <h3>REGISTRATION FORM</h3>
+            <div class="input-control">
+                <label for="">Full Name:</label>
+                <input type="text" placeholder="Enter Your Name" id="input-name" onkeyup="validateName()">
+                <span id="name-error"></span>
+            </div>
+            <div class="input-control">
+                <label for="">Phone:</label>
+                <input type="text" placeholder="Enter Your Number" id="input-phone" onkeyup="validatePhone()">
+                <span id="phone-error"></span>
+            </div>
+            <div class="input-control">
+                <label for="">Email:</label>
+                <input type="text" placeholder="Enter Your Email" id="input-email" onkeyup="validateEmail()">
+                <span id="email-error"></span>
+            </div>
+            <div class="input-control">
+                <label for="">Comment:</label>
+                <textarea name="" id="input-msg" cols="30" rows="5" placeholder="Enter Your Message" onkeyup="validateMsg()"></textarea>
+                <span id="msg-error"></span>
+            </div>
+
+            <button type="submit" onclick="return validateForm()">Submit</button>
+            <span id="submit-error"></span>
+        </form>
+   </div>
+    <script src="validation1.js"></script>
+</body>
+</html>

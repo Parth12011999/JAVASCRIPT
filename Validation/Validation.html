@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <link rel="stylesheet" href="validation.css">
+</head>
+<body>
+        <fieldset><h1>Validation Form</h1>
+            <h3 id="msg1"></h3>
+            <form action="" method="post" name="myForm" onsubmit="return regForm(this)">
+                <div class="formStyle">
+                    <div class="form-grp">
+                        <label for="firstName">First Name<span style="color: red;">*</span></label>
+                        <input type="text" name="firstName" id="Fname">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-grp">
+                        <label for="lastName">Last Name<span style="color: red;">*</span></label>
+                        <input type="text" name="lastName" id="Lname">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-grp">
+                        <label for="mobileNumber">Mobile No<span style="color: red;">*</span></label>
+                        <input type="number" name="mobileNumber" id="Mnumber">
+                        <div class="error"></div>
+                    </div>  
+                    <div class="form-grp">
+                        <label for="email">E-mail<span style="color: red;">*</span></label>
+                        <input type="email" name="email" id="Email">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-grp">
+                        <label for="password">Password<span style="color: red;">*</span></label>
+                        <input type="password" name="password" id="Password">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-grp">
+                        <label for="Cpassword">Confirm Password<span style="color: red;">*</span></label>
+                        <input type="password" name="cpassword" id="Cpassword">
+                        <div class="error"></div>
+                    </div>
+                    <!-- <div class="form-grp">
+                        <label for="">Gender<span style="color: red;">*</span></label>
+                        Male<input type="radio" name="gender" value="m" id="Gender1">
+                        Female<input type="radio" name="gender" value="f" id="Gender2">
+                        <div class="error"></div>
+                    </div> -->
+                    <div class="form-grp">
+                        <label for="">Country<span style="color: red;">*</span></label>
+                        <select name="country" id="Country">
+                            <option value="">--Select Country--</option>
+                            <option value="india">India</option>
+                            <option value="japan">Japan</option>
+                            <option value="usa">USA</option>
+                            <option value="china">China</option>
+                        </select>
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-grp">
+                        <label for="">Education<span style="color: red;">*</span></label>
+                        <select name="education" id="Education">
+                            <option value="">--Select Education</option>
+                            <option value="ssc">SSC</option>
+                            <option value="hsc">HSC</option>
+                            <option value="diploma">Diploma</option>
+                            <option value="be">B.E.</option>
+                            <option value="btech">B.Tech.</option>
+                            <option value="mtech">M.Tech.</option>
+                        </select>
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-grp">
+                        <label for="dob">Date Of Birth<span style="color: red;">*</span></label>
+                        <input type="date" name="dob" id="Dob">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-grp">
+                        <label for="upr">Upload CV<span style="color: red;">*</span></label>
+                        <input type="file" id="Cv">
+                        <div class="error"></div>
+                    </div>
+                    <div class="form-grp">
+                        <button type="submit" value="Registration" id="submit">submit</button>
+                        <span id="submit-error"></span>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+
+    <script src="validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Calculator</title>
+    <style>
+        .marksheet
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid black;
+            padding: 20px 0;
+        }
+        label
+        {
+            font-size: 20px;
+            padding: 0px 5px;
+            font-weight: bold;
+        }
+
+        input
+        {
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 3px;
+        }
+
+        button
+        {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: aqua;
+            border: solid aqua;
+            color: black;
+        }
+
+        button:hover
+        {
+            color: aqua;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="marksheet">
+    <h1>Marksheet</h1>
+        <label for="gujrati">Gujrati Marks</label>
+        <input type="number" id="gujrati">
+        <br>
+        <label for="hindi">Hindi Marks</label>
+        <input type="number" id="hindi">
+        <br>
+        <label for="english">English Marks</label>
+        <input type="number" id="english">
+        <br>
+        <button onclick="return total()" >Calculate</button>
+
+
+        <h1 id="result"></h1>
+        <h1 id="percent"></h1>
+        <h1 id="grade"></h1>
+    </div>
+
+
+    <script>
+        function total() {
+            var gujrati = document.getElementById('gujrati').value;
+            var hindi = document.getElementById('hindi').value;
+            var english = document.getElementById('english').value;
+            var total = +gujrati + +hindi + +english;
+            var per = (total/300)*100;
+            document.getElementById('result').innerHTML ="Total Marks:" + total;
+            document.getElementById('percent').innerHTML ="Total Percentage:" + per + "%";
+
+
+            if(per==100)
+            {
+                document.getElementById('grade').innerHTML = "Excellent";
+            }
+            else if (per>=80)
+            {
+                document.getElementById('grade').innerHTML = "Awesome";
+            }
+            else if (per>=60)
+            {
+                document.getElementById('grade').innerHTML = "Good Job";
+            }
+            else if (per>=40)
+            {
+                document.getElementById('grade').innerHTML = "Nice";
+            }
+            else if (per>=20)
+            {
+                document.getElementById('grade').innerHTML = "Could Be Better";
+            }
+            else
+            {
+                document.getElementById('grade').innerHTML = "Failed";
+            }
+            return flase;
+        }
+    </script>
+</body>
+</html>

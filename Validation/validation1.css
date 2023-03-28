@@ -1,0 +1,79 @@
+*
+{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+body
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+}
+.container
+{
+    font-size: 20px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container form
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 10px 10px;
+    max-width: 500px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px rgba(0, 0 , 0, 0.5);
+}
+.input-control
+{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 10px;
+}
+.input-control label
+{
+    flex-basis: 28%;
+}
+
+::placeholder{
+    font-size: 14px;
+}
+.input-control input,textarea
+{
+    flex-basis: 68%;
+    padding: 10px 40px 10px 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.input-control span
+{
+    padding: 0px 3px;
+    position: absolute;
+    bottom: 13px;
+    right: 15px;
+    font-size: 14px;
+    color: red;
+}
+.input-control span i
+{
+    color: green;
+}
+form button
+{
+    padding: 5px 20px;
+    font-size: 14px;
+    outline: transparent;
+}
+form span
+{
+    color: red;
+    font-size: 14px;
+}
