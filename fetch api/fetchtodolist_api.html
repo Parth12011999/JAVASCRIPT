@@ -13,6 +13,7 @@
 <body>
     <div class="container">
         <div id="loading" class="spinner-border text-muted"></div>
+        <input type="checkbox" checked>
         <div class="container">
             <ol class="list-group list-group-numbered" id="myCards">
                 <!-- <input type="checkbox" checked> -->
@@ -24,6 +25,7 @@
         fetch("https://jsonplaceholder.typicode.com/todos")
         .then ((resp) => {return resp.json();})
         .then ((data) => {
+            // console.log(data);
             show(data);
             document.getElementById('loading').style.display ="none";
         })
@@ -31,29 +33,31 @@
 
         let myCards = document.getElementById('myCards');
         function show(data) {
+
             for(const i of data){
-
-                function CheckOP() {
-                var input = document.getElementById('check')
-                if (!i.completed == false) {
-                   return input.checked = true;
-                }
-                // else if (i.completed == true)
-                // {
-                //     return input.checked = true;
-                // }
-                // console.log(i.completed,i.id);
-
+                // making cards
+                myCards.insertAdjacentHTML("afterbegin",TodoHtmlCreator(i.title,i.completed));
             }
-            // console.log(i.completed);
-            let htmlData = `<li class="list-group-item d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">${i.title}</div>
-                                    ${i.completed}
-                                </div>
-                                <span class="badge bg-success rounded-pill"><input type="checkbox" id="check" value="${(CheckOP())}"  ></span>
-                            </li>`;
-                            myCards.insertAdjacentHTML("afterbegin",htmlData);
+
+            function TodoHtmlCreator(title,completed) {
+                if(completed)
+                {
+                return`<li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold">${title}</div>
+                                ${completed}
+                            </div>
+                            <span class="badge bg-success rounded-pill"><input type="checkbox" checked>${completed}</span>
+                        </li>`;
+                }
+
+                return `<li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">${title}</div>
+                        ${completed}
+                    </div>
+                    <span class="badge bg-success rounded-pill"><input type="checkbox">${completed}</span>
+                    </li>`;
             }
         }
     </script>
