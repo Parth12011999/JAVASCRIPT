@@ -1,17 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        .
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0%;
+      margin: 0%;
+    }
+    .header {
+      height: 80px;
+      background-color: brown;
+    }
+    .logo {
+      height: 100%;
+      font-size: 25px;
+      font-weight: bold;
+      float: left;
+      padding: 20px 20px;
+    }
+    .nav-list {
+      padding: 20px 0;
+      float: right;
+    }
+    .nav-list a {
+      text-decoration: none;
+      padding: 0 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #bar {
+      display: none;
+    }
+    .active {
+      color: red;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        position: relative;
+        width: 100%;
+        height: 80px;
+        font-size: 25px;
+        font-weight: bold;
+        float: left;
+        padding: 20px 20px;
+      }
+      #bar {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+      }
+      .nav-list a {
+        float: none;
+        display: none;
+      }
+      .nav-listresponsive {
+        background-color: rgb(241, 84, 84);
+        float: none;
+      }
+      .nav-listresponsive a {
+        display: block;
+        padding: 0px 10px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  </style>
+  <body>
+    <div class="header">
+      <!-- logo -->
+      <span class="logo">Net.Comp</span>
+      <!-- navs -->
+      <div class="nav-list" id="navList">
+        <a class="active">Home</a>
+        <a>Products</a>
+        <a>Service</a>
+        <a>Contact</a>
+      </div>
+      <!-- Bar -->
+      <span><i class="fa fa-bars" id="bar"></i></span>
     </div>
     <script>
-        var html = ``
+      const Bar = document.getElementById("bar");
+      // const screen = window.visualViewport.width;
+      // function Nav() {
+      //   window.onchange(() => {
+      //     AdjustHeader();
+      //   });
+      // }
+
+      // console.log(screen);
+
+      // function AdjustHeader() {
+      //   if (screen >= 768) {
+      //     Bar.style.display = "none";
+      //     navList.style.display = "visible";
+      //     console.log("hello");
+      //   } else {
+      //     Bar.style.display = "visible";
+      //     navList.style.display = "none";
+      //   }
+      // }
+      // Nav();
+
+      Bar.addEventListener("click", function () {
+        const navList = document.getElementById("navList");
+
+        if (navList.className === "nav-list") {
+          navList.className += "responsive";
+          // Bar.style.display = 'none';
+        } else {
+          navList.className = "nav-list";
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
