@@ -13,11 +13,11 @@
     <button onclick="alertFun()">Alert</button>
 
     <script>
-        var lists = document.getElementsByClassName('list');
+        var lists = document.querySelectorAll('.list');
 
         function alertFun() {
             for(const i of lists) {
-            console.log(i);
+            alert(i.innerHTML);
         }
         }
     </script>
