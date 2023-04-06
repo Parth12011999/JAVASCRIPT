@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <input type="text" id="input">
+  </head>
+  <body>
+    <input type="text" id="input" />
     <p id="demo"></p>
     <button onclick="hello()">Click me</button>
     <script>
-        let check = new Promise((resolve, reject) => {
-            var input = document.getElementById('input');
-            var print = document.getElementById('demo');
+function hello() {
+          let check = new Promise((resolve, reject) => {
+            var input = document.getElementById("input");
+            var print = document.getElementById("demo");
             if (input.value == "") {
-                resolve(print.innerHTML="Please Enter something");
+              resolve((print.innerHTML = "Please Enter something"));
+            } else {
+              reject((print.innerHTML = "Good"));
             }
-            else{
-                reject(print.innerHTML="Good");
-            }
-        })
-            
-        function hello() {
-            check.then((response) => document.write(response)).catch((error)=>document.write(error));
-        }    
+          });
+    
+          check
+            .then((response) => document.write(response))
+            .catch((error) => document.write(error));
+}
     </script>
-</body>
+  </body>
 </html>
