@@ -16,10 +16,6 @@ class BankAccount {
 
 }
 
-
-
-
-
 accounts = [];
 const bankaccountForm = document.querySelector('#bankaccountForm');
 const customerName = document.querySelector('#customerName');
@@ -27,7 +23,7 @@ const customerBalance = document.querySelector('#customerBalance');
 const formTable = document.querySelector('#formTable')
 bankaccountForm.addEventListener('submit',(e) => {
     e.preventDefault();
-
+    BankAccount("parth",2000)
     const account = new BankAccount(customerName.value,+customerBalance.value);
     accounts.push(account);
     console.log(accounts);

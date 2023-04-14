@@ -1,102 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <button id="click" onclick="check()">Click me</button>
     <script>
-        // document.write(alert("hello Parth"));
+      function check() {
+        const clickMe = document.getElementById("click");
+        if (clickMe.clicked) {
+          console.log("pressed");
+        } else {
+          console.log("not pressed");
+        }
+      }
 
-        // alert(null === +"\n0\n");
+      // document.write(alert("hello Parth"));
 
-        if("0"){alert('Hello');}
+      // alert(null === +"\n0\n");
 
-        // alert(null || 2 || undefined);
+      // if("0"){alert('Hello');}
 
-        // let fruits = ["apple", "mango", "orange"];
+      // alert(null || 2 || undefined);
 
-        // let shoppingCart = fruits;
+      // let fruits = ["apple", "mango", "orange"];
 
-        // shoppingCart.push ("banana");
+      // let shoppingCart = fruits;
 
-        // document.write(fruits + "<br>");
-        // document.write(shoppingCart + "<br>");
-        // alert(fruits.length);
+      // shoppingCart.push ("banana");
 
+      // document.write(fruits + "<br>");
+      // document.write(shoppingCart + "<br>");
+      // alert(fruits.length);
 
-        // let emp = {};
-        // emp.name = "John";
-        // emp.surname = "smith";
-        // emp.name = "pete";
-        // delete user.name;
-        // document.write(emp.name + " " + emp.surname);
+      // let emp = {};
+      // emp.name = "John";
+      // emp.surname = "smith";
+      // emp.name = "pete";
+      // delete user.name;
+      // document.write(emp.name + " " + emp.surname);
 
-        // let john = {name:"John", surname:"hill", age:25};
-        // let pete = {name:"Pete", surname:"top", age:30};
-        // let mary = {name:"Mary", surname:"ress", age:28};
-        // let users = [john,pete,mary];
-        // let names = users.map((item) => item.name);
-        // let usermapped = users.map((user) => ({
-        //     fullname: `${user.name} ${user.surname}`,
-        //     age: user.age
-        // }))
+      // let john = {name:"John", surname:"hill", age:25};
+      // let pete = {name:"Pete", surname:"top", age:30};
+      // let mary = {name:"Mary", surname:"ress", age:28};
+      // let users = [john,pete,mary];
+      // let names = users.map((item) => item.name);
+      // let usermapped = users.map((user) => ({
+      //     fullname: `${user.name} ${user.surname}`,
+      //     age: user.age
+      // }))
 
-        // alert( usermapped[0].age ); // 1
-        // alert( usermapped[0].fullname );   
-        // console.log(names);
-        // document.write(names);
-        // alert(names);
-        // let salaries = { "John": 100, "Pete": 300, "Mary": 250 };
-        // function sumSalaries(salaries) {
-        // let sum = 0;
-        // for (let salary of Object.values(salaries)) {
-        //     sum += salary;
-        // }
-        // return sum;
-        // }
-        // alert( sumSalaries(salaries) );
-        // let json = JSON.stringify(john);
-        // console.log(json);
-        
+      // alert( usermapped[0].age ); // 1
+      // alert( usermapped[0].fullname );
+      // console.log(names);
+      // document.write(names);
+      // alert(names);
+      // let salaries = { "John": 100, "Pete": 300, "Mary": 250 };
+      // function sumSalaries(salaries) {
+      // let sum = 0;
+      // for (let salary of Object.values(salaries)) {
+      //     sum += salary;
+      // }
+      // return sum;
+      // }
+      // alert( sumSalaries(salaries) );
+      // let json = JSON.stringify(john);
+      // console.log(json);
 
-        // let obj = JSON.parse(json);
-        // console.log(obj);
+      // let obj = JSON.parse(json);
+      // console.log(obj);
 
-        // for(let i = 0; i < john.length; i++){
-        //     document.write(john[i].name +" is "+ john[i].age + " year old. <br>");
-        // }
+      // for(let i = 0; i < john.length; i++){
+      //     document.write(john[i].name +" is "+ john[i].age + " year old. <br>");
+      // }
 
-        // let user = { name: "John", years: 30 };
+      // let user = { name: "John", years: 30 };
 
-        // // a) Extracting the 'name' property
-        // let { name } = user;
+      // // a) Extracting the 'name' property
+      // let { name } = user;
 
-        // // b) Extracting the 'years' property and renaming it to 'age'
-        // let { years: age } = user;
+      // // b) Extracting the 'years' property and renaming it to 'age'
+      // let { years: age } = user;
 
-        // // c) Extracting the 'isAdmin' property with a default value of 'false'
-        // let { isAdmin = false } = user;
+      // // c) Extracting the 'isAdmin' property with a default value of 'false'
+      // let { isAdmin = false } = user;
 
-        // console.log(name);
-            
-        // let salaries = {
-        //     "John": 100,
-        //     "Pete": 300,
-        //     "Mary": 250,
-        // };
+      // console.log(name);
 
-        // function sumSalaries(salaries) {
-        //     var sum = 0;
-        //     for (const salary of Object.values(salaries)) {
-        //         sum += salary;
-        //     }
-        //     return sum;
-        // }
+      // let salaries = {
+      //     "John": 100,
+      //     "Pete": 300,
+      //     "Mary": 250,
+      // };
 
-        // alert( sumSalaries(salaries) );
+      // function sumSalaries(salaries) {
+      //     var sum = 0;
+      //     for (const salary of Object.values(salaries)) {
+      //         sum += salary;
+      //     }
+      //     return sum;
+      // }
+
+      // alert( sumSalaries(salaries) );
     </script>
-</body>
+  </body>
 </html>

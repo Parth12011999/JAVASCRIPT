@@ -3,24 +3,24 @@ function BankAccount (accountName, accountBalance = 0) {
     this.accountNumber = Date.now();
     this.accountBalance = accountBalance;
 
-    // this.deposit = (amount) => {
-    //     this.accountBalance = this.accountBalance + +amount  // method
-    // }
+    this.deposit = (amount) => {
+        this.accountBalance = this.accountBalance + +amount  // method
+    }
 
-    // this.withdraw = (amount) => {
-    //     this.accountBalance = this.accountBalance - +amount  // method
-    // }
+    this.withdraw = (amount) => {
+        this.accountBalance = this.accountBalance - +amount  // method
+    }
 }
 
 // We can add this method in prototype so we can use it anywhere in object function
 
-BankAccount.prototype.deposit = function (amount) {
-    this.accountBalance = this.accountBalance + +amount  // method
-}
+// BankAccount.prototype.deposit = function (amount) {
+//     this.accountBalance = this.accountBalance + +amount  // method
+// }
 
-BankAccount.prototype.withdraw = function (amount) {
-    this.accountBalance = this.accountBalance - +amount  // method
-}
+// BankAccount.prototype.withdraw = function (amount) {
+//     this.accountBalance = this.accountBalance - +amount  // method
+// }
 // const parthAccount = new BankAccount("Parth S", 1000);
 // const saurabhAccount = new BankAccount("Saurabh P");
 // parthAccount.deposit(200);

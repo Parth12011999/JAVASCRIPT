@@ -14,65 +14,94 @@
   </head>
   <body>
     <div class="container">
-      <button class="btn-primary my-2" onclick="start()" id="mancloth">
-        Man's Category Clothing
+      <button
+        class="btn-primary my-2"
+        name="man"
+        id="btn-Men"
+        onclick="btnHandler(this.id)"
+      >
+        men's clothing
       </button>
-      <div class="row" id="mans"></div>
+      <div class="row" id="divMen"></div>
 
-      <button class="btn-primary my-2" onclick="start()" id="jewellary">
-        Jewellary
+      <button
+        class="btn-primary my-2"
+        id="btn-Jewel"
+        onclick="btnHandler(this.id)"
+      >
+        jewelery
       </button>
-      <div class="row" id="jewel"></div>
+      <div class="row" id="divJewel"></div>
 
-      <button class="btn-primary my-2">Electronics</button>
-      <div class="row" id="electronic"></div>
+      <button
+        class="btn-primary my-2"
+        id="btn-Electronics"
+        onclick="btnHandler(this.id)"
+      >
+        electronics
+      </button>
+      <div class="row" id="divElectronic"></div>
 
-      <button class="btn-primary my-2">Woman's Category Clothing</button>
-      <div class="row" id="womans"></div>
+      <button
+        class="btn-primary my-2"
+        id="btn-Women"
+        onclick="btnHandler(this.id)"
+      >
+        women's clothing
+      </button>
+      <div class="row" id="divWomen"></div>
     </div>
     <!-- JavaScript  -->
     <script>
-      let men = document.getElementById("mancloth");
-      let jewel = document.getElementById("jewellary");
+      // var btn1 = document.getElementById("btn-Men");
+      // console.log("btn1:" + btn1)
+      // Locations
+      // const PutMan = document.getElementById("mans");
+      // const Putjewel = document.getElementById("jewel");
+      // const Putelectro = document.getElementById("electronic");
+      // const PutwomanCloth = document.getElementById("womans");
 
-      function start() {
+      // Buttons
+      // const men = document.getElementById("mancloth");
+      // const jewel = document.getElementById("jewellary");
+      // const electro = document.getElementById("electro");
+      // const womanCloth = document.getElementById("womanCloth");
+
+      function btnHandler(a) {
+        console.log(a);
+
         fetch("https://fakestoreapi.com/products")
           .then((resp) => {
             return resp.json();
           })
           .then((data) => {
-            showData(data);
-            console.log(data);
-          });
-      }
-      function showData(data) {
-        // let op = data.map((item, index, ent) => {
-        //   return item;
-        // });
-
-        const filteredOp = data.filter(function (item) {
-            if (item.category == "men's clothing") {
+            // console.log(data)
+            var btn = document.getElementById(a);
+            var locate = btn.nextElementSibling;
+            var text = document.getElementById(a).innerText;
+            const filteredOp = data.filter(function (item) {
+              if (item.category == text) {
                 return item;
+                console.log(item);
+              }
+            });
+            console.log(filteredOp);
+            for (const i of filteredOp) {
+              TodoHtmlCreator(
+                locate,
+                i.image,
+                i.title,
+                i.description,
+                i.price,
+                i.rating.rate,
+                i.category
+              );
             }
-        })
-        let location = document.getElementById("mans");
-
-        for (const i of filteredOp) {
-          location.insertAdjacentHTML(
-            "afterbegin",
-            TodoHtmlCreator(
-              i.image,
-              i.title,
-              i.description,
-              i.price,
-              i.rating.rate,
-              i.category
-            )
-          );
-        }
+          });
       }
 
       function TodoHtmlCreator(
+        a,
         image,
         title,
         description,
@@ -80,76 +109,24 @@
         rating,
         category
       ) {
-        if (category == "men's clothing") {
-          return `<div class="col-md-4 col-lg-3 col-sm-6 d-flex my-3">
-            <div class="card p-0" style="width: 18rem;">
-            <img src="${image}" class="card-img-top w-100" style="height: 50%" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">${title}</h5>
-            <p class="card-text">${description.slice(0, 20)}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Price: ${price}</li>
-            <li class="list-group-item">Rating: ${rating.rate}</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-        </div>
+        let HtmlData = `
+        <div class="col-md-4 col-lg-3 col-sm-6 d-flex my-3">
+              <div class="card p-0" style="width: 18rem;">
+              <img src="${image}" class="card-img-top w-100" style="height: 50%" alt="...">
+              <div class="card-body">
+              <h5 class="card-title">${title}</h5>
+              <p class="card-text">${description.slice(0, 20)}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+              <li class="list-group-item">Price: ${price}</li>
+              <li class="list-group-item">Rating: ${rating.rate}</li>
+              </ul>
+              <div class="card-body">
+                  <a href="#" class="btn btn-primary">Buy Now</a>
+              </div>
+          </div>
         </div>`;
-        } else if (category == "jewelery") {
-          return `<div class="col-md-4 col-lg-3 col-sm-6 d-flex my-3">
-            <div class="card p-0" style="width: 18rem;">
-            <img src="${image}" class="card-img-top w-100" style="height: 50%" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">${title}</h5>
-            <p class="card-text">${description.slice(0, 20)}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Price: ${price}</li>
-            <li class="list-group-item">Rating: ${rating.rate}</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-        </div>
-        </div>`;
-        } else if (category == "electronics") {
-          return `<div class="col-md-4 col-lg-3 col-sm-6 d-flex my-3">
-            <div class="card p-0" style="width: 18rem;">
-            <img src="${image}" class="card-img-top w-100" style="height: 50%" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">${title}</h5>
-            <p class="card-text">${description.slice(0, 20)}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Price: ${price}</li>
-            <li class="list-group-item">Rating: ${rating.rate}</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-        </div>
-        </div>`;
-        } else if (category == "women's clothing") {
-          return `<div class="col-md-4 col-lg-3 col-sm-6 d-flex my-3">
-            <div class="card p-0" style="width: 18rem;">
-            <img src="${image}" class="card-img-top w-100" style="height: 50%" alt="...">
-            <div class="card-body">
-            <h5 class="card-title">${title}</h5>
-            <p class="card-text">${description.slice(0, 20)}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Price: ${price}</li>
-            <li class="list-group-item">Rating: ${rating.rate}</li>
-            </ul>
-            <div class="card-body">
-                <a href="#" class="btn btn-primary">Buy Now</a>
-            </div>
-        </div>
-        </div>`;
-        }
-        return `Nothing to show`;
+        return a.insertAdjacentHTML("afterbegin", HtmlData);
       }
     </script>
     <script
