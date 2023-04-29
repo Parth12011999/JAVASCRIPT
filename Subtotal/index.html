@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Sub Total</h1>
+    <div class="wrapper">
+      <table border="1px solid black">
+        <thead>
+          <th>Product Info</th>
+          <th>Quantity</th>
+          <th>Price(per unit)</th>
+          <th>Price(sub Total)</th>
+        </thead>
+        <tr>
+          <td>Product1</td>
+          <td><input type="text" id="qun"></td>
+          <td id="price">500</td>
+          <td id="output"></td>
+        </tr>
+        <tr>
+          <td colspan="4" style="text-align: center">
+            <button id="btn">Total</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      const btn = document.querySelector("#btn");
+      const subTotal = document.getElementById("output");
+
+      btn.addEventListener("click", () => {
+        const Quant = document.getElementById("qun").value;
+        console.log(Quant)
+        const Price = document.getElementById("price").innerText;
+        subTotal.innerText = Quant * Price;
+      });
+    </script>
+  </body>
+</html>

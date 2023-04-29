@@ -5,18 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .main{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .right{
+        height: 150px;
+        width: 150px;
+        background-color: aqua;
+      }
+      .left{
+        height: 150px;
+        width: 150px;
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
-    <button id="click" onclick="check()">Click me</button>
+    <div class="main">
+      <div class="right">
+      dsad
+      </div>
+      <div class="left">
+      asdas
+      </div>
+    </div>
     <script>
-      function check() {
-        const clickMe = document.getElementById("click");
-        if (clickMe.clicked) {
-          console.log("pressed");
-        } else {
-          console.log("not pressed");
-        }
-      }
+      // function check() {
+      //   const clickMe = document.getElementById("click");
+      //   if (clickMe.clicked) {
+      //     console.log("pressed");
+      //   } else {
+      //     console.log("not pressed");
+      //   }
+      // }
 
       // document.write(alert("hello Parth"));
 
@@ -105,6 +129,32 @@
       // }
 
       // alert( sumSalaries(salaries) );
+
+      // const arr = [1,2,3,4,5,6]
+      // const mappedArr = arr.map((val,index)=>{
+      //   if(index < 3){
+      //     return val;
+      //   }
+      // });
+      // console.log(mappedArr)
+
+    // const obj = {name:"javascript",
+    // age:30
+    // }
+    // console.log(Object.keys(obj))
+
+    // Object.defineProperty(obj, 'name', {enumerable: false})
+    // console.log(Object.keys(obj))
+
+    // const obj1 = Object.create(obj);
+    // obj1.id = 1;
+    // console.log(obj1)
+    // console.log(obj1.name)
+    // console.log(Object.keys(obj1))
+
+
+
+      
     </script>
   </body>
 </html>
